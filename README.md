@@ -1,2 +1,3 @@
 # docker-compose
-Docker compose helper cripts
+Docker compose helper scripts for PHP 5
+

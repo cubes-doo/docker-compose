@@ -36,7 +36,7 @@ fi
 
 if [ $MAKE_BACKUP -eq 1 ]; then
     echo "creating $backup ...";
-    docker exec -i -u root ${COMPOSE_PROJECT_NAME}_db mysqldump -u root --password=$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE > $backup;
+    docker exec -i -u root ${COMPOSE_PROJECT_NAME}_db mysqldump --no-create-info -u root --password=$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE --ignore-table=$MYSQL_DATABASE.migrations --ignore-table=$MYSQL_DATABASE.seeds > $backup;
 fi
 
 if [ $REMIGRATE -eq 1 ]; then

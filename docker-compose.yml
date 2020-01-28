@@ -7,6 +7,13 @@ services:
             - ../:/opt
         working_dir: /opt
         env_file: .env
+        # Uncomment to expose the database to an eternal port
+        #
+        # When uncommented, you can connect to your database (in the local environment) like so:
+        # mysql -h 127.0.0.1 -P {$EXTERNAL_PORT_DB} -u root -p
+        #
+        # ports:
+        #     - "$EXTERNAL_PORT_DB:3306"
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: "${COMPOSE_PROJECT_NAME}_phpmyadmin"

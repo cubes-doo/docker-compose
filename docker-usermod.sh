@@ -2,7 +2,7 @@
 
 
 # ============================================================================ #
-# 				            docker-usermod.sh                                  #
+#                           docker-usermod.sh                                  #
 # ============================================================================ #
 #           Set docker container user id and user primary group id             #
 #                      to match those of the host                              #
@@ -139,7 +139,7 @@ if [ -z $DOCKER_PRIM_GROUP_ID ]; then
 fi
 
 
-# compare user id's and adapt docker's if not equal
+# compare user ids and adapt docker's if not equal
 # -------------------------------------------------
 echo "$SCRIPT_NAME: host user id = $USER_ID   <->   docker container user id = $DOCKER_USER_ID";
 if [ $USER_ID -ne $DOCKER_USER_ID ]; then
@@ -159,7 +159,7 @@ else
 fi
 
 
-# compare group id's and adapt docker's if not equal
+# compare group ids and adapt docker's if not equal
 # --------------------------------------------------
 echo "$SCRIPT_NAME: host primary group id = $PRIM_GROUP_ID   <->   docker container user primary group id = $DOCKER_PRIM_GROUP_ID";
 if [ $PRIM_GROUP_ID -ne $DOCKER_PRIM_GROUP_ID ]; then

@@ -27,6 +27,7 @@ services:
             - ../:/opt
             - ./phpfpm.conf:/usr/local/etc/php-fpm.d/default.conf
             - ./php.ini:/usr/local/etc/php/conf.d/php.ini
+            - "${LOCAL_BASHRC_PATH}:/home/localuser/.bashrc"
         working_dir: /opt
         links:
             - db

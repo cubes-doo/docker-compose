@@ -1,8 +1,10 @@
 FROM cubesdoo/php-fpm:latest
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && \ 
-    apt-get -y install wget && \
-    apt-get -y install alsa-utils && \
-    apt-get -y install vim
+    apt-get install -y --no-install-recommends apt-utils && \
+    apt-get -y install procps && \
+    apt-get -y install alsa-utils
 
 RUN usermod -a -G audio localuser

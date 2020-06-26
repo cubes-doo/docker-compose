@@ -31,11 +31,8 @@ services:
             - ../:/opt
             - ./phpfpm.conf:/usr/local/etc/php-fpm.d/default.conf
             - ./php.ini:/usr/local/etc/php/conf.d/php.ini
-<<<<<<< HEAD
             - "${LOCAL_BASHRC_PATH}:/home/localuser/.bashrc"
-=======
             - "${FILES_PATH}:/home/localuser/files/"
->>>>>>> aplay
         working_dir: /opt
         links:
             - db

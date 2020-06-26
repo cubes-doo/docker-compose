@@ -17,7 +17,6 @@ IMPORT_BACKUP=1;
 if [ -z "$SCRIPT_ARG" ]; then
 :
 else
-    echo "test script arg";
     echo $SCRIPT_ARG;
     if [ "$SCRIPT_ARG" = "just-backup" ]; then
         REMIGRATE=0;
